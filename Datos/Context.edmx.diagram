@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4f4a6d3da134e83b64e2580d169735b" Name="Diagram1">
+        <EntityTypeShape EntityType="ActivoFijoModel.catalogo" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.departamento" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.empleado" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.empresa" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.factura" Width="1.5" PointX="14" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.movimiento" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.oficina" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proformacab" Width="1.5" PointX="14" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proformadet" Width="1.5" PointX="16.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proveedor" Width="1.5" PointX="11.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.seguro" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.subtipoactivo" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.tipoactivo" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.tipomovimiento" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="ActivoFijoModel.fkempleado_catalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkoficina_catalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkseguro_catalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fksubtipoactivo_catalogo" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkdepartamento_oficina" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkempresa_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkempleado_movimiento1" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkempleado_movimiento2" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkoficina_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkempresa_seguro" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkproveedor_factura" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fktipomovimiento_movimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkproformacab_proformadet" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fkproveedor_proformacab" ManuallyRouted="false" />
+        <AssociationConnector Association="ActivoFijoModel.fktipoactivo_subtipoactivo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -143,6 +143,7 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Web.WebPages.Depl
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Web.WebPages.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Web.WebPages.Razor.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\WebGrease.dll
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Datos.pdb
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Datos.exe.config
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Web.Helpers.xml
@@ -155,6 +156,7 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Web.WebPages.Razo
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Newtonsoft.Json.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Antlr3.Runtime.pdb
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\es\System.Web.Helpers.resources.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\es\System.Web.Mvc.resources.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\es\System.Web.Optimization.resources.dll

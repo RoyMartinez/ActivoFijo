@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ActivoFijoModelStoreContainer" CdmEntityContainer="ActivoFijoEntities">
+    <EntitySetMapping Name="catalogo">
+      <EntityTypeMapping TypeName="ActivoFijoModel.catalogo">
+        <MappingFragment StoreEntitySet="catalogo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="subtipoactivo" ColumnName="subtipoactivo" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+          <ScalarProperty Name="oficina" ColumnName="oficina" />
+          <ScalarProperty Name="seguro" ColumnName="seguro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamento">
+      <EntityTypeMapping TypeName="ActivoFijoModel.departamento">
+        <MappingFragment StoreEntitySet="departamento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="ActivoFijoModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="puesto" ColumnName="puesto" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="oficina" ColumnName="oficina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresa">
+      <EntityTypeMapping TypeName="ActivoFijoModel.empresa">
+        <MappingFragment StoreEntitySet="empresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="ActivoFijoModel.factura">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numerofactura" ColumnName="numerofactura" />
+          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+          <ScalarProperty Name="fechaemision" ColumnName="fechaemision" />
+          <ScalarProperty Name="fechaingreso" ColumnName="fechaingreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movimiento">
+      <EntityTypeMapping TypeName="ActivoFijoModel.movimiento">
+        <MappingFragment StoreEntitySet="movimiento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipomovimiento" ColumnName="tipomovimiento" />
+          <ScalarProperty Name="empleadoorigen" ColumnName="empleadoorigen" />
+          <ScalarProperty Name="empleadodestino" ColumnName="empleadodestino" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tiempoduracion" ColumnName="tiempoduracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oficina">
+      <EntityTypeMapping TypeName="ActivoFijoModel.oficina">
+        <MappingFragment StoreEntitySet="oficina">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="departamento" ColumnName="departamento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proformacab">
+      <EntityTypeMapping TypeName="ActivoFijoModel.proformacab">
+        <MappingFragment StoreEntitySet="proformacab">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+          <ScalarProperty Name="numeroserie" ColumnName="numeroserie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proformadet">
+      <EntityTypeMapping TypeName="ActivoFijoModel.proformadet">
+        <MappingFragment StoreEntitySet="proformadet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cabecera" ColumnName="cabecera" />
+          <ScalarProperty Name="fila" ColumnName="fila" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedor">
+      <EntityTypeMapping TypeName="ActivoFijoModel.proveedor">
+        <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seguro">
+      <EntityTypeMapping TypeName="ActivoFijoModel.seguro">
+        <MappingFragment StoreEntitySet="seguro">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="tiempo" ColumnName="tiempo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subtipoactivo">
+      <EntityTypeMapping TypeName="ActivoFijoModel.subtipoactivo">
+        <MappingFragment StoreEntitySet="subtipoactivo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoactivo" ColumnName="tipoactivo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoactivo">
+      <EntityTypeMapping TypeName="ActivoFijoModel.tipoactivo">
+        <MappingFragment StoreEntitySet="tipoactivo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipomovimiento">
+      <EntityTypeMapping TypeName="ActivoFijoModel.tipomovimiento">
+        <MappingFragment StoreEntitySet="tipomovimiento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

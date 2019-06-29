@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ActivoFijoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="catalogo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="subtipoactivo" Type="Int32" />
+    <Property Name="empleado" Type="Int32" />
+    <Property Name="oficina" Type="Int32" />
+    <Property Name="seguro" Type="Int32" />
+    <NavigationProperty Name="empleado1" Relationship="Self.fkempleado_catalogo" FromRole="catalogo" ToRole="empleado" />
+    <NavigationProperty Name="oficina1" Relationship="Self.fkoficina_catalogo" FromRole="catalogo" ToRole="oficina" />
+    <NavigationProperty Name="seguro1" Relationship="Self.fkseguro_catalogo" FromRole="catalogo" ToRole="seguro" />
+    <NavigationProperty Name="subtipoactivo1" Relationship="Self.fksubtipoactivo_catalogo" FromRole="catalogo" ToRole="subtipoactivo" />
+  </EntityType>
+  <EntityType Name="departamento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empresa" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="oficina" Relationship="Self.fkdepartamento_oficina" FromRole="departamento" ToRole="oficina" />
+    <NavigationProperty Name="empresa1" Relationship="Self.fkempresa_departamento" FromRole="departamento" ToRole="empresa" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="oficina" Type="Int32" />
+    <NavigationProperty Name="catalogo" Relationship="Self.fkempleado_catalogo" FromRole="empleado" ToRole="catalogo" />
+    <NavigationProperty Name="movimiento" Relationship="Self.fkempleado_movimiento1" FromRole="empleado" ToRole="movimiento" />
+    <NavigationProperty Name="movimiento1" Relationship="Self.fkempleado_movimiento2" FromRole="empleado" ToRole="movimiento" />
+    <NavigationProperty Name="oficina1" Relationship="Self.fkoficina_empleado" FromRole="empleado" ToRole="oficina" />
+  </EntityType>
+  <EntityType Name="empresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ruc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="departamento" Relationship="Self.fkempresa_departamento" FromRole="empresa" ToRole="departamento" />
+    <NavigationProperty Name="seguro" Relationship="Self.fkempresa_seguro" FromRole="empresa" ToRole="seguro" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numerofactura" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="proveedor" Type="Int32" />
+    <Property Name="fechaemision" Type="DateTime" Precision="0" />
+    <Property Name="fechaingreso" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="proveedor1" Relationship="Self.fkproveedor_factura" FromRole="factura" ToRole="proveedor" />
+  </EntityType>
+  <EntityType Name="movimiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipomovimiento" Type="Int32" />
+    <Property Name="empleadoorigen" Type="Int32" />
+    <Property Name="empleadodestino" Type="Int32" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="tiempoduracion" Type="Int32" />
+    <NavigationProperty Name="empleado" Relationship="Self.fkempleado_movimiento1" FromRole="movimiento" ToRole="empleado" />
+    <NavigationProperty Name="empleado1" Relationship="Self.fkempleado_movimiento2" FromRole="movimiento" ToRole="empleado" />
+    <NavigationProperty Name="tipomovimiento1" Relationship="Self.fktipomovimiento_movimiento" FromRole="movimiento" ToRole="tipomovimiento" />
+  </EntityType>
+  <EntityType Name="oficina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departamento" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="catalogo" Relationship="Self.fkoficina_catalogo" FromRole="oficina" ToRole="catalogo" />
+    <NavigationProperty Name="departamento1" Relationship="Self.fkdepartamento_oficina" FromRole="oficina" ToRole="departamento" />
+    <NavigationProperty Name="empleado" Relationship="Self.fkoficina_empleado" FromRole="oficina" ToRole="empleado" />
+  </EntityType>
+  <EntityType Name="proformacab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="proveedor" Type="Int32" />
+    <Property Name="numeroserie" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="proformadet" Relationship="Self.fkproformacab_proformadet" FromRole="proformacab" ToRole="proformadet" />
+    <NavigationProperty Name="proveedor1" Relationship="Self.fkproveedor_proformacab" FromRole="proformacab" ToRole="proveedor" />
+  </EntityType>
+  <EntityType Name="proformadet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cabecera" Type="Int32" />
+    <Property Name="fila" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="proformacab" Relationship="Self.fkproformacab_proformadet" FromRole="proformadet" ToRole="proformacab" />
+  </EntityType>
+  <EntityType Name="proveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="factura" Relationship="Self.fkproveedor_factura" FromRole="proveedor" ToRole="factura" />
+    <NavigationProperty Name="proformacab" Relationship="Self.fkproveedor_proformacab" FromRole="proveedor" ToRole="proformacab" />
+  </EntityType>
+  <EntityType Name="seguro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numero" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="empresa" Type="Int32" />
+    <Property Name="tiempo" Type="Int32" />
+    <NavigationProperty Name="catalogo" Relationship="Self.fkseguro_catalogo" FromRole="seguro" ToRole="catalogo" />
+    <NavigationProperty Name="empresa1" Relationship="Self.fkempresa_seguro" FromRole="seguro" ToRole="empresa" />
+  </EntityType>
+  <EntityType Name="subtipoactivo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoactivo" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="catalogo" Relationship="Self.fksubtipoactivo_catalogo" FromRole="subtipoactivo" ToRole="catalogo" />
+    <NavigationProperty Name="tipoactivo1" Relationship="Self.fktipoactivo_subtipoactivo" FromRole="subtipoactivo" ToRole="tipoactivo" />
+  </EntityType>
+  <EntityType Name="tipoactivo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="subtipoactivo" Relationship="Self.fktipoactivo_subtipoactivo" FromRole="tipoactivo" ToRole="subtipoactivo" />
+  </EntityType>
+  <EntityType Name="tipomovimiento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="movimiento" Relationship="Self.fktipomovimiento_movimiento" FromRole="tipomovimiento" ToRole="movimiento" />
+  </EntityType>
+  <Association Name="fkempleado_catalogo">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="catalogo">
+        <PropertyRef Name="empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkoficina_catalogo">
+    <End Role="oficina" Type="Self.oficina" Multiplicity="0..1" />
+    <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oficina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="catalogo">
+        <PropertyRef Name="oficina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkseguro_catalogo">
+    <End Role="seguro" Type="Self.seguro" Multiplicity="0..1" />
+    <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="seguro">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="catalogo">
+        <PropertyRef Name="seguro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fksubtipoactivo_catalogo">
+    <End Role="subtipoactivo" Type="Self.subtipoactivo" Multiplicity="0..1" />
+    <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subtipoactivo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="catalogo">
+        <PropertyRef Name="subtipoactivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkdepartamento_oficina">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+    <End Role="oficina" Type="Self.oficina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="oficina">
+        <PropertyRef Name="departamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkempresa_departamento">
+    <End Role="empresa" Type="Self.empresa" Multiplicity="0..1" />
+    <End Role="departamento" Type="Self.departamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="departamento">
+        <PropertyRef Name="empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkempleado_movimiento1">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="movimiento" Type="Self.movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="movimiento">
+        <PropertyRef Name="empleadoorigen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkempleado_movimiento2">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+    <End Role="movimiento" Type="Self.movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="movimiento">
+        <PropertyRef Name="empleadodestino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkoficina_empleado">
+    <End Role="oficina" Type="Self.oficina" Multiplicity="0..1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oficina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="oficina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkempresa_seguro">
+    <End Role="empresa" Type="Self.empresa" Multiplicity="0..1" />
+    <End Role="seguro" Type="Self.seguro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="seguro">
+        <PropertyRef Name="empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkproveedor_factura">
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="0..1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fktipomovimiento_movimiento">
+    <End Role="tipomovimiento" Type="Self.tipomovimiento" Multiplicity="0..1" />
+    <End Role="movimiento" Type="Self.movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipomovimiento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="movimiento">
+        <PropertyRef Name="tipomovimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkproformacab_proformadet">
+    <End Role="proformacab" Type="Self.proformacab" Multiplicity="0..1" />
+    <End Role="proformadet" Type="Self.proformadet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proformacab">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proformadet">
+        <PropertyRef Name="cabecera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkproveedor_proformacab">
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="0..1" />
+    <End Role="proformacab" Type="Self.proformacab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proformacab">
+        <PropertyRef Name="proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fktipoactivo_subtipoactivo">
+    <End Role="tipoactivo" Type="Self.tipoactivo" Multiplicity="0..1" />
+    <End Role="subtipoactivo" Type="Self.subtipoactivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoactivo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="subtipoactivo">
+        <PropertyRef Name="tipoactivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ActivoFijoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="catalogo" EntityType="Self.catalogo" />
+    <EntitySet Name="departamento" EntityType="Self.departamento" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" />
+    <EntitySet Name="empresa" EntityType="Self.empresa" />
+    <EntitySet Name="factura" EntityType="Self.factura" />
+    <EntitySet Name="movimiento" EntityType="Self.movimiento" />
+    <EntitySet Name="oficina" EntityType="Self.oficina" />
+    <EntitySet Name="proformacab" EntityType="Self.proformacab" />
+    <EntitySet Name="proformadet" EntityType="Self.proformadet" />
+    <EntitySet Name="proveedor" EntityType="Self.proveedor" />
+    <EntitySet Name="seguro" EntityType="Self.seguro" />
+    <EntitySet Name="subtipoactivo" EntityType="Self.subtipoactivo" />
+    <EntitySet Name="tipoactivo" EntityType="Self.tipoactivo" />
+    <EntitySet Name="tipomovimiento" EntityType="Self.tipomovimiento" />
+    <AssociationSet Name="fkempleado_catalogo" Association="Self.fkempleado_catalogo">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="catalogo" EntitySet="catalogo" />
+    </AssociationSet>
+    <AssociationSet Name="fkoficina_catalogo" Association="Self.fkoficina_catalogo">
+      <End Role="oficina" EntitySet="oficina" />
+      <End Role="catalogo" EntitySet="catalogo" />
+    </AssociationSet>
+    <AssociationSet Name="fkseguro_catalogo" Association="Self.fkseguro_catalogo">
+      <End Role="seguro" EntitySet="seguro" />
+      <End Role="catalogo" EntitySet="catalogo" />
+    </AssociationSet>
+    <AssociationSet Name="fksubtipoactivo_catalogo" Association="Self.fksubtipoactivo_catalogo">
+      <End Role="subtipoactivo" EntitySet="subtipoactivo" />
+      <End Role="catalogo" EntitySet="catalogo" />
+    </AssociationSet>
+    <AssociationSet Name="fkdepartamento_oficina" Association="Self.fkdepartamento_oficina">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="oficina" EntitySet="oficina" />
+    </AssociationSet>
+    <AssociationSet Name="fkempresa_departamento" Association="Self.fkempresa_departamento">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="departamento" EntitySet="departamento" />
+    </AssociationSet>
+    <AssociationSet Name="fkempleado_movimiento1" Association="Self.fkempleado_movimiento1">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="movimiento" EntitySet="movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fkempleado_movimiento2" Association="Self.fkempleado_movimiento2">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="movimiento" EntitySet="movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fkoficina_empleado" Association="Self.fkoficina_empleado">
+      <End Role="oficina" EntitySet="oficina" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkempresa_seguro" Association="Self.fkempresa_seguro">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="seguro" EntitySet="seguro" />
+    </AssociationSet>
+    <AssociationSet Name="fkproveedor_factura" Association="Self.fkproveedor_factura">
+      <End Role="proveedor" EntitySet="proveedor" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="fktipomovimiento_movimiento" Association="Self.fktipomovimiento_movimiento">
+      <End Role="tipomovimiento" EntitySet="tipomovimiento" />
+      <End Role="movimiento" EntitySet="movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fkproformacab_proformadet" Association="Self.fkproformacab_proformadet">
+      <End Role="proformacab" EntitySet="proformacab" />
+      <End Role="proformadet" EntitySet="proformadet" />
+    </AssociationSet>
+    <AssociationSet Name="fkproveedor_proformacab" Association="Self.fkproveedor_proformacab">
+      <End Role="proveedor" EntitySet="proveedor" />
+      <End Role="proformacab" EntitySet="proformacab" />
+    </AssociationSet>
+    <AssociationSet Name="fktipoactivo_subtipoactivo" Association="Self.fktipoactivo_subtipoactivo">
+      <End Role="tipoactivo" EntitySet="tipoactivo" />
+      <End Role="subtipoactivo" EntitySet="subtipoactivo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

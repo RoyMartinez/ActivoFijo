@@ -10,6 +10,10 @@ namespace Datos
     {
         static void Main(string[] args)
         {
+            var context = new ActivoFijoEntities();
+            var empresa = new empresa();
+            context.empresa.ToList().ForEach(p => Console.WriteLine(p.nombre));
+            Console.ReadLine();
         }
     }
 }
