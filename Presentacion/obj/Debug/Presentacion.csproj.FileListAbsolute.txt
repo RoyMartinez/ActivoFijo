@@ -169,3 +169,5 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\obj\Debug\Presentacion.cspro
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\obj\Debug\Presentacion.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\obj\Debug\Presentacion.pdb
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.SqlServer.dll
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.SqlServer.xml
