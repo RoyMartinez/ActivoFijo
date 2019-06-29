@@ -8,7 +8,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Datos;
-using Presentacion.Models;
 
 namespace Presentacion.Controllers
 {

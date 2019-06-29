@@ -153,12 +153,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\catalogosController.cs" />
+    <Compile Include="Controllers\Context.cs" />
     <Compile Include="Controllers\departamentosController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
     <Compile Include="Controllers\empresasController.cs" />
     <Compile Include="Controllers\facturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Models.cs" />
     <Compile Include="Controllers\movimientosController.cs" />
     <Compile Include="Controllers\oficinasController.cs" />
     <Compile Include="Controllers\proformacabsController.cs" />
@@ -171,7 +171,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmpresasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -459,9 +458,11 @@
     <Content Include="Views\tipomovimientos\Details.cshtml" />
     <Content Include="Views\tipomovimientos\Edit.cshtml" />
     <Content Include="Views\tipomovimientos\Index.cshtml" />
+    <Content Include="Views\Shared\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
