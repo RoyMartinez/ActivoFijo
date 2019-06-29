@@ -1,0 +1,66 @@
+﻿@model Datos.catalogo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>catalogo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empleado1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empleado1.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.oficina1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.oficina1.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.seguro1.numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seguro1.numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subtipoactivo1.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subtipoactivo1.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

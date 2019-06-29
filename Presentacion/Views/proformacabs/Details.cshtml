@@ -1,0 +1,34 @@
+﻿@model Datos.proformacab
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>proformacab</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroserie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroserie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedor1.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor1.empresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

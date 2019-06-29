@@ -1,0 +1,50 @@
+﻿@model Datos.factura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numerofactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numerofactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaemision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaemision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaingreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaingreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedor1.empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor1.empresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
