@@ -1,0 +1,7 @@
+D:\Roy Martínez\ActivoFijo\Datos\bin\Debug\Datos.exe.config
+D:\Roy Martínez\ActivoFijo\Datos\bin\Debug\Datos.exe
+D:\Roy Martínez\ActivoFijo\Datos\bin\Debug\Datos.pdb
+D:\Roy Martínez\ActivoFijo\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+D:\Roy Martínez\ActivoFijo\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Roy Martínez\ActivoFijo\Datos\obj\Debug\Datos.exe
+D:\Roy Martínez\ActivoFijo\Datos\obj\Debug\Datos.pdb
