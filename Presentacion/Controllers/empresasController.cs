@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Datos;
+using Presentacion.Models;
 
 namespace Presentacion.Controllers
 {
@@ -19,8 +20,14 @@ namespace Presentacion.Controllers
         public async Task<ActionResult> Index()
         {
             return View(await db.empresa.ToListAsync());
+            //return View(await EmpresasModel.Get());
         }
 
+        //public ActionResult Index()
+        //{
+        //    //return View(await db.empresa.ToListAsync());
+        //    return View(EmpresasModel.Get());
+        //}
         // GET: empresas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
