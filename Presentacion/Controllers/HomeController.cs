@@ -38,7 +38,7 @@ namespace Presentacion.Controllers
 
             Login db = new Login();
             var user = db.usuario.Where(p => (p.usuario1 == usuario) && (p.contrasena == contraseña)).ToList();
-            if (user == null)
+            if (user == null || user.Count()==0)
             {
                 return View();
             }

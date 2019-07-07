@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace Presentacion.Models
         public Nullable<int> tipomovimiento { get; set; }
         public Nullable<int> empleadoorigen { get; set; }
         public Nullable<int> empleadodestino { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> tiempoduracion { get; set; }
 
