@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Presentacion.Controllers
+namespace Presentacion.Globals
 {
-    public class Context: Datos.ActivoFijoEntities
+    public static class Globals
     {
+        public static string Usuario;
     }
 }

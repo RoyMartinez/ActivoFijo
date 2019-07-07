@@ -34,5 +34,7 @@ namespace Presentacion.Models
         public virtual DbSet<subtipoactivo> subtipoactivo { get; set; }
         public virtual DbSet<tipoactivo> tipoactivo { get; set; }
         public virtual DbSet<tipomovimiento> tipomovimiento { get; set; }
+        public virtual DbSet<tipousuario> tipousuario { get; set; }
+        public virtual DbSet<usuario> usuario { get; set; }
     }
 }

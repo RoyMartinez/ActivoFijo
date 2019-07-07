@@ -130,6 +130,22 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
     <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="tipousuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="30" />
+    <Property Name="contrasena" Type="varchar" MaxLength="15" />
+    <Property Name="tipo" Type="int4" />
+  </EntityType>
   <Association Name="fkdepartamento_oficina">
     <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
     <End Role="oficina" Type="Self.oficina" Multiplicity="*" />
@@ -310,6 +326,18 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fkusuariotipousuario">
+    <End Role="tipousuario" Type="Self.tipousuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipousuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ActivoFijoModelStoreContainer">
     <EntitySet Name="catalogo" EntityType="Self.catalogo" Schema="public" store:Type="Tables" />
     <EntitySet Name="departamento" EntityType="Self.departamento" Schema="public" store:Type="Tables" />
@@ -325,6 +353,8 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
     <EntitySet Name="subtipoactivo" EntityType="Self.subtipoactivo" Schema="public" store:Type="Tables" />
     <EntitySet Name="tipoactivo" EntityType="Self.tipoactivo" Schema="public" store:Type="Tables" />
     <EntitySet Name="tipomovimiento" EntityType="Self.tipomovimiento" Schema="public" store:Type="Tables" />
+    <EntitySet Name="tipousuario" EntityType="Self.tipousuario" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="public" store:Type="Tables" />
     <AssociationSet Name="fkdepartamento_oficina" Association="Self.fkdepartamento_oficina">
       <End Role="departamento" EntitySet="departamento" />
       <End Role="oficina" EntitySet="oficina" />
@@ -384,6 +414,10 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
     <AssociationSet Name="fktipomovimiento_movimiento" Association="Self.fktipomovimiento_movimiento">
       <End Role="tipomovimiento" EntitySet="tipomovimiento" />
       <End Role="movimiento" EntitySet="movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fkusuariotipousuario" Association="Self.fkusuariotipousuario">
+      <End Role="tipousuario" EntitySet="tipousuario" />
+      <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

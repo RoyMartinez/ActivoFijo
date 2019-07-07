@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ActivoFijoModel.Store" Provider="Npgsql" ProviderManifestToken="11.3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tipousuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="30" />
+    <Property Name="contrasena" Type="varchar" MaxLength="15" />
+    <Property Name="tipo" Type="int4" />
+  </EntityType>
+  <Association Name="fkusuariotipousuario">
+    <End Role="tipousuario" Type="Self.tipousuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipousuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ActivoFijoModelStoreContainer">
+    <EntitySet Name="tipousuario" EntityType="Self.tipousuario" Schema="public" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="public" store:Type="Tables" />
+    <AssociationSet Name="fkusuariotipousuario" Association="Self.fkusuariotipousuario">
+      <End Role="tipousuario" EntitySet="tipousuario" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

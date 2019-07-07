@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ActivoFijoModel.Store" Provider="Npgsql" ProviderManifestToken="11.3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ActivoFijoModel.Store" Provider="Npgsql" ProviderManifestToken="11.3" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="catalogo">
           <Key>
             <PropertyRef Name="id" />
@@ -134,6 +134,22 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
           </Key>
           <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tipousuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="30" />
+          <Property Name="contrasena" Type="varchar" MaxLength="15" />
+          <Property Name="tipo" Type="int4" />
         </EntityType>
         <Association Name="fkdepartamento_oficina">
           <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
@@ -315,6 +331,18 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fkusuariotipousuario">
+          <End Role="tipousuario" Type="Self.tipousuario" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipousuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ActivoFijoModelStoreContainer">
           <EntitySet Name="catalogo" EntityType="Self.catalogo" Schema="public" store:Type="Tables" />
           <EntitySet Name="departamento" EntityType="Self.departamento" Schema="public" store:Type="Tables" />
@@ -330,6 +358,8 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
           <EntitySet Name="subtipoactivo" EntityType="Self.subtipoactivo" Schema="public" store:Type="Tables" />
           <EntitySet Name="tipoactivo" EntityType="Self.tipoactivo" Schema="public" store:Type="Tables" />
           <EntitySet Name="tipomovimiento" EntityType="Self.tipomovimiento" Schema="public" store:Type="Tables" />
+          <EntitySet Name="tipousuario" EntityType="Self.tipousuario" Schema="public" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="public" store:Type="Tables" />
           <AssociationSet Name="fkdepartamento_oficina" Association="Self.fkdepartamento_oficina">
             <End Role="departamento" EntitySet="departamento" />
             <End Role="oficina" EntitySet="oficina" />
@@ -390,9 +420,12 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
             <End Role="tipomovimiento" EntitySet="tipomovimiento" />
             <End Role="movimiento" EntitySet="movimiento" />
           </AssociationSet>
+          <AssociationSet Name="fkusuariotipousuario" Association="Self.fkusuariotipousuario">
+            <End Role="tipousuario" EntitySet="tipousuario" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ActivoFijoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -805,7 +838,43 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
             <End Role="tipoactivo" EntitySet="tipoactivo" />
             <End Role="subtipoactivo" EntitySet="subtipoactivo" />
           </AssociationSet>
+          <EntitySet Name="tipousuario" EntityType="ActivoFijoModel.tipousuario" />
+          <EntitySet Name="usuario" EntityType="ActivoFijoModel.usuario" />
+          <AssociationSet Name="fkusuariotipousuario" Association="ActivoFijoModel.fkusuariotipousuario">
+            <End Role="tipousuario" EntitySet="tipousuario" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tipousuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="usuario" Relationship="ActivoFijoModel.fkusuariotipousuario" FromRole="tipousuario" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="contrasena" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="tipo" Type="Int32" />
+          <NavigationProperty Name="tipousuario" Relationship="ActivoFijoModel.fkusuariotipousuario" FromRole="usuario" ToRole="tipousuario" />
+        </EntityType>
+        <Association Name="fkusuariotipousuario">
+          <End Type="ActivoFijoModel.tipousuario" Role="tipousuario" Multiplicity="0..1" />
+          <End Type="ActivoFijoModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipousuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -947,6 +1016,24 @@ advertencia 6005: Actualmente, no se admite el tipo de datos 'money' para la ver
               <MappingFragment StoreEntitySet="tipomovimiento">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipousuario">
+            <EntityTypeMapping TypeName="ActivoFijoModel.tipousuario">
+              <MappingFragment StoreEntitySet="tipousuario">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="ActivoFijoModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

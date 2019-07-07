@@ -29,8 +29,8 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\bin\Debug\System.Numerics.Vectors.x
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\bin\Debug\System.ValueTuple.xml
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csproj.CopyComplete
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.exe
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.pdb
-D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

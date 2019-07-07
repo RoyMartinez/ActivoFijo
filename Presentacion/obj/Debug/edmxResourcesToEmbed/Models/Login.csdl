@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ActivoFijoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tipousuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="usuario" Relationship="Self.fkusuariotipousuario" FromRole="tipousuario" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="contrasena" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="tipo" Type="Int32" />
+    <NavigationProperty Name="tipousuario" Relationship="Self.fkusuariotipousuario" FromRole="usuario" ToRole="tipousuario" />
+  </EntityType>
+  <Association Name="fkusuariotipousuario">
+    <End Role="tipousuario" Type="Self.tipousuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipousuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Login" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tipousuario" EntityType="Self.tipousuario" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="fkusuariotipousuario" Association="Self.fkusuariotipousuario">
+      <End Role="tipousuario" EntitySet="tipousuario" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

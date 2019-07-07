@@ -34,6 +34,9 @@
         <AssociationConnector Association="ActivoFijoModel.fkproformacab_proformadet" ManuallyRouted="false" />
         <AssociationConnector Association="ActivoFijoModel.fkproveedor_proformacab" ManuallyRouted="false" />
         <AssociationConnector Association="ActivoFijoModel.fktipoactivo_subtipoactivo" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ActivoFijoModel.tipousuario" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="ActivoFijoModel.usuario" Width="1.5" PointX="3" PointY="9.875" />
+        <AssociationConnector Association="ActivoFijoModel.fkusuariotipousuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

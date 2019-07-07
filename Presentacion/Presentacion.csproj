@@ -54,6 +54,12 @@
     <Reference Include="EntityFramework6.Npgsql, Version=3.2.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\Datos\packages\EntityFramework6.Npgsql.3.2.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Datos\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Datos\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Npgsql, Version=4.0.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\Datos\packages\Npgsql.4.0.7\lib\net451\Npgsql.dll</HintPath>
@@ -74,6 +80,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\Datos\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\Datos\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -154,7 +162,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\catalogosController.cs" />
     <Compile Include="Controllers\catalogospController.cs" />
-    <Compile Include="Controllers\Context.cs" />
     <Compile Include="Controllers\departamentosController.cs" />
     <Compile Include="Controllers\departamentospController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
@@ -183,15 +190,33 @@
     <Compile Include="Controllers\tipoactivospController.cs" />
     <Compile Include="Controllers\tipomovimientosController.cs" />
     <Compile Include="Controllers\tipomovimientospController.cs" />
+    <Compile Include="Controllers\tipousuariosController.cs" />
+    <Compile Include="Controllers\usuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Globals\Globals.cs" />
     <Compile Include="Models\ActivoFijoEntities.cs" />
     <Compile Include="Models\catalogo.cs" />
     <Compile Include="Models\departamento.cs" />
     <Compile Include="Models\empleado.cs" />
     <Compile Include="Models\empresa.cs" />
     <Compile Include="Models\factura.cs" />
+    <Compile Include="Models\Login.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\movimiento.cs" />
     <Compile Include="Models\oficina.cs" />
     <Compile Include="Models\proformacab.cs" />
@@ -201,6 +226,12 @@
     <Compile Include="Models\subtipoactivo.cs" />
     <Compile Include="Models\tipoactivo.cs" />
     <Compile Include="Models\tipomovimiento.cs" />
+    <Compile Include="Models\tipousuario.cs">
+      <DependentUpon>Login.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>Login.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -380,6 +411,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Login.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Login.edmx</DependentUpon>
+      <LastGenOutput>Login.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Login.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Login.edmx</DependentUpon>
+      <LastGenOutput>Login.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\lib\advanced-datatable\images\Sorting icons.psd" />
@@ -392,6 +433,13 @@
     <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\lib\font-awesome\fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\Login.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Login.edmx.diagram">
+      <DependentUpon>Login.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -564,6 +612,17 @@
     <Content Include="Views\tipomovimientosp\Details.cshtml" />
     <Content Include="Views\tipomovimientosp\Edit.cshtml" />
     <Content Include="Views\tipomovimientosp\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\usuarios\Create.cshtml" />
+    <Content Include="Views\usuarios\Delete.cshtml" />
+    <Content Include="Views\usuarios\Details.cshtml" />
+    <Content Include="Views\usuarios\Edit.cshtml" />
+    <Content Include="Views\usuarios\Index.cshtml" />
+    <Content Include="Views\tipousuarios\Create.cshtml" />
+    <Content Include="Views\tipousuarios\Delete.cshtml" />
+    <Content Include="Views\tipousuarios\Details.cshtml" />
+    <Content Include="Views\tipousuarios\Edit.cshtml" />
+    <Content Include="Views\tipousuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -586,6 +645,9 @@
       <Project>{151c6999-e636-49ce-ae81-a532dd642e41}</Project>
       <Name>Datos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

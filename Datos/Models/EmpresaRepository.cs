@@ -8,19 +8,19 @@ namespace Datos.Models
 {
     public class EmpresaRepository
     {
-        public static List<empresa> GetAll()
-        {
-            try
-            {
-                using (ActivoFijoEntities context = new ActivoFijoEntities())
-                {
-                    return context.empresa.ToList();
-                }
-            }
-            catch(Exception ex)
-            {
-                return new List<empresa>();
-            }
-        }
+        //public static List<empresa> GetAll()
+        //{
+        //    //try
+        //    //{
+        //    //    using (ActivoFijoEntities context = new ActivoFijoEntities())
+        //    //    {
+        //    //        return context.empresa.ToList();
+        //    //    }
+        //    //}
+        //    //catch(Exception ex)
+        //    //{
+        //    //    return new List<empresa>();
+        //    //}
+        //}
     }
 }

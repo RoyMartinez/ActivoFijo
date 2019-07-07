@@ -135,6 +135,8 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Datos.exe
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.SqlServer.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework6.Npgsql.dll
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.Web.Infrastructure.dll
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Newtonsoft.Json.dll
@@ -158,6 +160,8 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Datos.exe.config
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework.SqlServer.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\EntityFramework6.Npgsql.xml
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Npgsql.pdb
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\Npgsql.xml
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Presentacion\bin\System.Buffers.xml

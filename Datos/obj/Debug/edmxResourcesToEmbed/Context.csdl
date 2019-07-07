@@ -409,5 +409,41 @@
       <End Role="tipoactivo" EntitySet="tipoactivo" />
       <End Role="subtipoactivo" EntitySet="subtipoactivo" />
     </AssociationSet>
+    <EntitySet Name="tipousuario" EntityType="ActivoFijoModel.tipousuario" />
+    <EntitySet Name="usuario" EntityType="ActivoFijoModel.usuario" />
+    <AssociationSet Name="fkusuariotipousuario" Association="ActivoFijoModel.fkusuariotipousuario">
+      <End Role="tipousuario" EntitySet="tipousuario" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="tipousuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="usuario" Relationship="ActivoFijoModel.fkusuariotipousuario" FromRole="tipousuario" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="contrasena" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="tipo" Type="Int32" />
+    <NavigationProperty Name="tipousuario" Relationship="ActivoFijoModel.fkusuariotipousuario" FromRole="usuario" ToRole="tipousuario" />
+  </EntityType>
+  <Association Name="fkusuariotipousuario">
+    <End Type="ActivoFijoModel.tipousuario" Role="tipousuario" Multiplicity="0..1" />
+    <End Type="ActivoFijoModel.usuario" Role="usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipousuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

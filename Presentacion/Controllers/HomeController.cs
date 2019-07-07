@@ -23,6 +23,33 @@ namespace Presentacion.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: movimientos/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string usuario, string contraseña)
+        { 
+
+            Login db = new Login();
+            var user = db.usuario.Where(p => (p.usuario1 == usuario) && (p.contrasena == contraseña)).ToList();
+            if (user == null)
+            {
+                return View();
+            }
+            else
+            {
+                Presentacion.Globals.Globals.Usuario = usuario;
+                return RedirectToAction("Index", "home");
+            }
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
