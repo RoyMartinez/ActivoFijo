@@ -1,0 +1,42 @@
+﻿@model Presentacion.Models.seguro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>seguro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tiempo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tiempo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empresa1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresa1.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

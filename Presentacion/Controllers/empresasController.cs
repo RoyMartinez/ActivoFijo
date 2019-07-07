@@ -18,6 +18,9 @@ namespace Presentacion.Controllers
         // GET: empresas
         public async Task<ActionResult> Index()
         {
+
+            var e= db.empresa.ToList();
+
             return View(await db.empresa.ToListAsync());
             //return View(await EmpresasModel.Get());
         }

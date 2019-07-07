@@ -33,3 +33,4 @@ D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csproj.CoreCompileI
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csproj.CopyComplete
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.exe
 D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.pdb
+D:\Roy Martínez\ActivoFijo\ActivoFijo\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

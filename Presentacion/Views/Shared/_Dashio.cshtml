@@ -259,43 +259,43 @@
                             <span>FORMULARIOS</span>
                         </a>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Empresas", "Index", "empresas")</li>
+                            <li> @Html.ActionLink("Empresas", "Index", "empresasp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Departamentos", "Index", "departamentos")</li>
+                            <li> @Html.ActionLink("Departamentos", "Index", "departamentosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Catalogo de activos fijos", "Index", "catalogos")</li>
+                            <li> @Html.ActionLink("Catalogo de activos fijos", "Index", "catalogosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Empleados", "Index", "empleados")</li>
+                            <li> @Html.ActionLink("Empleados", "Index", "empleadosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Facturas", "Index", "facturas")</li>
+                            <li> @Html.ActionLink("Facturas", "Index", "facturasp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Movimientos", "Index", "movimientos")</li>
+                            <li> @Html.ActionLink("Movimientos", "Index", "movimientosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Tipos de Movimientos", "Index", "Tipomovimientos")</li>
+                            <li> @Html.ActionLink("Tipos de Movimientos", "Index", "Tipomovimientosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Cabecera de proforma", "Index", "proformacabs")</li>
+                            <li> @Html.ActionLink("Cabecera de proforma", "Index", "proformacabsp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Detalle de proforma", "Index", "proformadets")</li>
+                            <li> @Html.ActionLink("Detalle de proforma", "Index", "proformadetsp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Proveedores", "Index", "proveedores")</li>
+                            <li> @Html.ActionLink("Proveedores", "Index", "proveedoresp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Seguros", "Index", "seguros")</li>
+                            <li> @Html.ActionLink("Seguros", "Index", "segurosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Tipos de Activo", "Index", "tiposactivos")</li>
+                            <li> @Html.ActionLink("Tipos de Activo", "Index", "tiposactivosp")</li>
                         </ul>
                         <ul class="sub">
-                            <li> @Html.ActionLink("Sub Tipo de Activos", "Index", "departamentos")</li>
+                            <li> @Html.ActionLink("Sub Tipo de Activos", "Index", "departamentosp")</li>
                         </ul>
                     </li>
                     @*<li class="sub-menu">
@@ -521,6 +521,7 @@
           console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 
 </html>

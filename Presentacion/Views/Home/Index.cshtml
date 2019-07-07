@@ -3,7 +3,9 @@
 }
 <div class="col-md-offset-4">
     <div class="jumbotron">
-        <h2>Bienvenido al Sistema de Activo Fijo<h2/>
+        <h2>SIGCAF</h2>
+        <p>
+        <h3>(Sistema de Gestion de Ciclo de vida de Vida de Activo Fijo )<h3/>
     </div>
 
     <div class="row">
@@ -14,7 +16,7 @@
                 eligiendo el tipo de activo que se esta guardando y con links de redireccion a ingreso desde las proformas,
                 a los proveedores
             </p>
-            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "catalogos") </a></p>
+            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "catalogosp") </a></p>
         </div>
         <div class="col-md-4">
             <h2>Ingresar un Movimiento de Activo</h2>
@@ -23,7 +25,7 @@
                 los movimientos van desde la alta de un activo fijo para con un empleado, la baja del activo de un empleado
                 o la rotacion temporal del activo fijo por un periodo determinado de dias.
             </p>
-            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "movimientos") </a></p>
+            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "movimientosp") </a></p>
         </div>
         <div class="col-md-4">
             <h2>Ingresar nuevos proveedores</h2>
@@ -31,7 +33,7 @@
                 Con esta opcion se dirigira al formulario para ingreesar nuevos proveedores,
                 actualizar los datos de un proveedor y si es necesario el de eliminar dicho proovedor de la lista de proveedores
             </p>
-            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "proveedores") </a></p>
+            <p><a>@Html.ActionLink("Acceder al formulario", "Index", "proveedoresp") </a></p>
         </div>
     </div>
 
