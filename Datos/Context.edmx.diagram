@@ -9,16 +9,16 @@
         <EntityTypeShape EntityType="ActivoFijoModel.departamento" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ActivoFijoModel.empleado" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ActivoFijoModel.empresa" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.factura" Width="1.5" PointX="14" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.factura" Width="1.5" PointX="11" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ActivoFijoModel.movimiento" Width="1.5" PointX="9.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ActivoFijoModel.oficina" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.proformacab" Width="1.5" PointX="14" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.proformadet" Width="1.5" PointX="16.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.proveedor" Width="1.5" PointX="11.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proformacab" Width="1.5" PointX="14.125" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proformadet" Width="1.5" PointX="17.625" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.proveedor" Width="1.5" PointX="16.5" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ActivoFijoModel.seguro" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.subtipoactivo" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.tipoactivo" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ActivoFijoModel.tipomovimiento" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.subtipoactivo" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.tipoactivo" Width="1.5" PointX="5.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ActivoFijoModel.tipomovimiento" Width="1.5" PointX="12" PointY="10.125" IsExpanded="true" />
         <AssociationConnector Association="ActivoFijoModel.fkempleado_catalogo" ManuallyRouted="false" />
         <AssociationConnector Association="ActivoFijoModel.fkoficina_catalogo" ManuallyRouted="false" />
         <AssociationConnector Association="ActivoFijoModel.fkseguro_catalogo" ManuallyRouted="false" />

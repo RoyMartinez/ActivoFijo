@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -16,6 +17,7 @@ namespace Presentacion.Models
         }
 
         public int id { get; set; }
+        [DisplayName("Nombre de Empleado")]
         public string nombre { get; set; }
         public string puesto { get; set; }
         public string codigo { get; set; }

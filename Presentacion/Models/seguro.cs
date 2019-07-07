@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -13,7 +14,8 @@ namespace Presentacion.Models
             this.catalogo = new HashSet<catalogo>();
         }
 
-        public int id { get; set; }
+        public int id { get; set; } 
+        [DisplayName("Numero de Seguro")]
         public string numero { get; set; }
         public Nullable<int> empresa { get; set; }
         public Nullable<int> tiempo { get; set; }
